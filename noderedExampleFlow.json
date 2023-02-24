@@ -8,49 +8,50 @@
         "env": []
     },
     {
-        "id": "0174bfba99e04e1e",
-        "type": "inject",
+        "id": "0d079f5d6f9b0aef",
+        "type": "http in",
         "z": "48016159c51a9860",
-        "name": "InjectOne",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "test_topic",
-        "payload": "{\"message\":\"Test Message\"}",
-        "payloadType": "json",
-        "x": 140,
-        "y": 100,
+        "name": "",
+        "url": "/example",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 120,
         "wires": [
             [
-                "a1983a0a04630749"
+                "2bd571f60e346c37"
             ]
         ]
     },
     {
-        "id": "a1983a0a04630749",
-        "type": "debug",
+        "id": "2bd571f60e346c37",
+        "type": "function",
         "z": "48016159c51a9860",
-        "name": "DebugInjectOne",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 100,
+        "name": "functionOne",
+        "func": "msg.payload = {\n    \"message\": \"test\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "13535dea5f9c6139"
+            ]
+        ]
+    },
+    {
+        "id": "13535dea5f9c6139",
+        "type": "http response",
+        "z": "48016159c51a9860",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 120,
         "wires": []
     }
 ]
